@@ -12,6 +12,7 @@ ip = "192.168.1.16"	#PC grande Giamma
 port = 8000
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 server_address = (ip, port)
 s.bind(server_address)
 print("Ctrl+c per chiudere il server")
