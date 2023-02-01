@@ -21,6 +21,6 @@ while True:
 	data, address = s.recvfrom(4096)
 	isW = isWol(data.hex())
 	if isW:
-		print("WOL")
+		# print("WOL") solo per debug
 		s.sendto(data, ("192.168.1.255", 9))
 		
