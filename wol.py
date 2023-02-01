@@ -1,4 +1,5 @@
 import socket
+import time
 
 def isWol(dati):
 	correct = False
@@ -11,10 +12,21 @@ def isWol(dati):
 ip = "192.168.1.16"	#PC grande Giamma
 port = 8000
 
+
+
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 server_address = (ip, port)
-s.bind(server_address)
+
+time.sleep(5)
+
+while True:
+	try:
+		s.bind(server_address)
+		break
+	except:
+		time.sleep(5)
+
 print("Ctrl+c per chiudere il server")
 print("Server in ascolto")
 while True:
