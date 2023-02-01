@@ -7,7 +7,8 @@ def isWol(dati):
 	correct = correct and mac == dati[12:]
 	return correct
 	
-ip = "192.168.1.23"
+#ip = "192.168.1.23" #Natalino
+ip = "192.168.1.16"	#PC grande Giamma
 port = 8000
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
